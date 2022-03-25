@@ -1,0 +1,21 @@
+<!-- <view class="msg-list-panel"> -->
+  <view >
+    <view class="msg-date-panel" wx:if="{{(msgItem.timestamp-lastTimestamp)>1800000}}">{{msgItem.time}}</view>
+    <view class="msg-left-item msg-item" wx:if="{{msgItem.account!=imUserId}}">
+        <view class="nick-image-panel">
+          <LazyImage src="{{otherImg||'https://static.jingrizf.com/file/e8eea00d-366c-4832-b8da-2da428fd1616.png?x-oss-process=image/auto-orient,1/resize,m_lfit,w_300/quality,q_100'}}" image-container-class="image-container-class" styles="height:100%;width:100%"/>
+        </view>
+        <view class="msg-centent-panel msg-left-centent-panel">
+          {{msgItem.msg}}
+        </view>
+    </view>
+    <view class="msg-right-item msg-item" wx:else>
+        <view class="msg-centent-panel msg-right-centent-panel">
+          {{msgItem.msg}}
+        </view>
+        <view class="nick-image-panel">
+          <LazyImage src="{{msgItem.nickimg||'https://static.jingrizf.com/file/e8eea00d-366c-4832-b8da-2da428fd1616.png?x-oss-process=image/auto-orient,1/resize,m_lfit,w_300/quality,q_100'}}" image-container-class="image-container-class" styles="height:100%;width:100%"/>
+        </view>
+    </view>
+  </view>
+<!-- </view> -->

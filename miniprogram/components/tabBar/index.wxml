@@ -1,0 +1,8 @@
+<view class="tabBar">
+  <view class="tab" wx:for="{{tabBars}}" wx:key="path" bindtap="changeRoute" data-path="{{item.path}}">
+    <view class="icon">
+      <image src="{{index == nowIndex ?item.activeIcon:item.icon}}" />
+    </view>
+    <view class="name {{index == nowIndex?'activeName':''}}" style="color:{{index == nowIndex?selectedColor:color}}">{{item.name}}</view>
+  </view>
+</view>

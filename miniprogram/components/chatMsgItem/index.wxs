@@ -1,0 +1,9 @@
+function wifiSignalStrength(num){
+  if(num>70) return '信号强';
+  if(num>40) return '信号一般';
+  return '信号弱';
+}
+
+module.exports={
+  wifiSignalStrength:wifiSignalStrength
+}

@@ -1,0 +1,12 @@
+<NavBar title="首页"/>
+<view class="container">
+    <view class="swiper-panel">
+      <swiper class="swiper">
+        <swiper-item>
+          <image class="" src="https://img0.baidu.com/it/u=1084076284,4117249384&fm=253&fmt=auto&app=138&f=JPEG?w=970&h=485"/>
+        </swiper-item>
+      </swiper>
+    </view>
+</view>
+<view bindtap="goDkRank">打开排行</view>
+<tabBar/>

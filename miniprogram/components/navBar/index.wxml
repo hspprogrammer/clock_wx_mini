@@ -1,0 +1,10 @@
+<view class="narBar_panel" style="padding-top: {{statuBarHeight}}px;">
+  <view class="left_arrow" style="width: {{menuWidth}}px;" >
+    <view wx:if="{{!isHome}}" bindtap="clickLeft">
+      <van-icon  name="arrow-left" size="19"/>
+    </view>
+  </view>
+  <view>{{title}}</view>
+  <View class="right" style="width: {{menuWidth}}px;">
+  </View>
+</view>
