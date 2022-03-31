@@ -1,10 +1,14 @@
-<view class="narBar_panel" style="padding-top: {{statuBarHeight}}px;">
+<view class="narBar_panel {{type=='fixed'?'fixed':''}} {{type=='transparentFixed'?'transparentFixed_navBar':''}} {{isShadow?'navBar_shadow':''}}" style="padding-top: {{statuBarHeight}}px;" catchtap="empty">
   <view class="left_arrow" style="width: {{menuWidth}}px;" >
-    <view wx:if="{{!isHome}}" bindtap="clickLeft">
+    <view wx:if="{{!isHome && isShowLeftBtn}}" bindtap="clickLeft">
       <van-icon  name="arrow-left" size="19"/>
+    </view>
+    <view wx:if="{{isHome && isShowLeftBtn}}" bindtap="clickLeft">
+      <van-icon name="wap-home" size="19"/>
     </view>
   </view>
   <view>{{title}}</view>
   <View class="right" style="width: {{menuWidth}}px;">
   </View>
 </view>
+<view class="narBar_panel" wx:if="{{type == 'fixed' || type == 'transparentFixed' }}" style="padding-top: {{statuBarHeight}}px;"></view>

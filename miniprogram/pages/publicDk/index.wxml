@@ -1,0 +1,12 @@
+<NavBar title="打卡" />
+<view class="page-panel">
+  <view class="title">今日学习内容：</view>
+  <view class="input-panel">
+    <textarea placeholder="今天完成了啥呢。。。" placeholder-class="input-text" 	maxlength="500"></textarea>
+  </view>
+  <view class="title">图片为证：</view>
+  <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" max-count="1"/>
+  <view class="public-btn">
+    打卡上传
+  </view>
+</view>

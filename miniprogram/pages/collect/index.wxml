@@ -1,0 +1,11 @@
+<NavBar title="编辑资料" type="fixed" />
+<button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+  <image class="avatar" src="{{avatarUrl}}"></image>
+</button> 
+<view class="cell-panel">
+  <view class="cell-title">昵称</view>
+  <input type="nickname" class="weui-input" placeholder="请输入昵称"/>
+</view>
+<view class="save-btn">
+    保    存
+  </view>

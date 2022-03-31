@@ -1,2 +1,23 @@
-<NavBar title="我的"/>
-<tabBar nowIndex="1"/>
+<!-- <NavBar title="我的"/> -->
+<view class="page-panel">
+  <view class="nick-info">
+    <view class="left">
+      <view class="nickImg">
+        <image src="https://6b79-kydk-9gefpree1ca906af-1305408647.tcb.qcloud.la/icon/%E5%A4%B4%E5%83%8F.png?sign=de1d6003c0099c1efdaa4666924d2d06&t=1648706562"></image>
+      </view>
+      <view class="nickName">blueshuangyue</view>
+    </view>
+    <view class="edif" bindtap="goEditUserInfo">编辑</view>
+  </view>
+  <!-- 打卡记录 -->
+  <view class="dkList" bindtap="goDkRank">
+    <view class="right">
+      <view class="icon">
+        <image src="https://6b79-kydk-9gefpree1ca906af-1305408647.tcb.qcloud.la/icon/%E6%89%93%E5%8D%A1.png?sign=fc8dbfb03e23adada1962893ba19f7bf&t=1648707075" />
+      </view>
+      打卡记录
+    </view>
+    <van-icon name="arrow" />
+  </view>
+</view>
+<tabBar nowIndex="1" />

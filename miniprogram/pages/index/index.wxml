@@ -1,4 +1,4 @@
-<NavBar title="首页"/>
+<NavBar title="首页" isShowLeftBtn="{{false}}"/>
 <view class="container">
     <view class="swiper-panel">
       <swiper class="swiper">
@@ -7,6 +7,24 @@
         </swiper-item>
       </swiper>
     </view>
+    <!-- 倒计时 -->
+    <view class="cound-down">
+      <view class="title">考研倒计时</view>
+      <van-count-down class="cound-down-panel" use-slot time="{{ time }}" bind:change="onChange" format="HH:mm:ss">
+        <text class="item">{{ timeData.days }}</text>天
+        <text class="item">{{ timeData.hours }}</text>时
+        <text class="item">{{ timeData.minutes }}</text>分
+        <text class="item">{{ timeData.seconds }}</text>秒
+      </van-count-down>
+    </view>
+    <!-- 九宫格 -->
+    <view class="nine-channel">
+      <view class="channel-item" bindtap="goPublicDk">
+        <view class="icon">
+          <image src="https://6b79-kydk-9gefpree1ca906af-1305408647.tcb.qcloud.la/icon/%E6%89%93%E5%8D%A1.png?sign=fc8dbfb03e23adada1962893ba19f7bf&t=1648707075" />
+        </view>
+        今日打卡
+      </view>
+    </view>
 </view>
-<view bindtap="goDkRank">打开排行</view>
 <tabBar/>

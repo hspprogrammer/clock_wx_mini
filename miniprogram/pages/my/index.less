@@ -1,1 +1,66 @@
-/* pages/my/index.wxss */
+.page-panel {
+  width: 100%;
+
+  .nick-info {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 24rpx;
+    padding-top: 158rpx;
+
+    .left {
+      display: flex;
+      align-items: center;
+
+      .nickImg {
+        width: 120rpx;
+        height: 120rpx;
+        border-radius: 120rpx;
+        overflow: hidden;
+      }
+
+      .nickName {
+        width: 450rpx;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 32rpx;
+        font-weight: bold;
+        color: #333333;
+        margin-left: 32rpx;
+      }
+    }
+
+    .edif {
+      font-size: 30rpx;
+      color: #666666;
+    }
+  }
+
+  .dkList{
+    width: 100%;
+    height: 98rpx;
+    background-color: #fff;
+    margin-top: 32rpx;
+    display: flex;
+    align-items: center;
+    padding: 24rpx;
+    box-sizing: border-box;
+    font-size: 30rpx;
+    color: #666666;
+    justify-content: space-between;
+    .right{
+      display: flex;
+      align-items: center;
+      .icon{
+        width: 58rpx;
+        height: 58rpx;
+        margin-right: 24rpx;
+      }
+    }
+    
+  }
+}

@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/my/index",
-    "pages/dkRank/index"
+    "pages/dkLog/index",
+    "pages/publicDk/index",
+    "pages/collect/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

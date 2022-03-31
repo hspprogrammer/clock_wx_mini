@@ -7,7 +7,7 @@
   "compileType": "miniprogram",
   "projectname": "dk-mini",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": true,
     "postcss": true,
@@ -56,5 +56,6 @@
   "simulatorPluginLibVersion": {},
   "appid": "wx21f8aa6eb17d5f62",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "libVersion": "2.23.2",
   "condition": {}
 }

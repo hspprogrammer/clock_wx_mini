@@ -4,15 +4,22 @@ const app = getApp()
 
 Page({
   data: {
+    time: 30 * 60 * 60 * 1000,
+    timeData: {},
   },
   onLoad() {
   console.log('sss')
   },
-  goDkRank(){
-    wx.navigateTo({
-      url: '/pages/dkRank/index',
-    })
+  // 倒计时
+  onChange(e) {
+    this.setData({
+      timeData: e.detail,
+    });
   },
-  onUnload(){
+  //去打卡
+  goPublicDk(){
+    wx.navigateTo({
+      url: '/pages/publicDk/index',
+    })
   }
 })
