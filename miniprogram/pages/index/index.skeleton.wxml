@@ -1,0 +1,73 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/4/1 上午10:06:57
+使用方法：
+在 /Users/hanshanpeng/myproject/myCode/my_project/wx/dk-wx/miniprogram/pages/index/index.wxml 引入模板
+
+```
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/hanshanpeng/myproject/myCode/my_project/wx/dk-wx/miniprogram/pages/index/index.wxss 中引入样式
+```
+@import "./index.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view is="components/navBar/index">
+      <view class="navBar-index--narBar_panel navBar-index--fixed" style="padding-top: 20px;">
+        <view class="navBar-index--left_arrow" style="width: 87px;"></view>
+        <view class="sk-transparent sk-text-14-2857-437 sk-text">首页</view>
+        <view class="navBar-index--right" style="width: 87px;"></view>
+      </view>
+      <view class="navBar-index--narBar_panel" style="padding-top: 20px;"></view>
+    </view>
+    <view class="container">
+      <view class="swiper-panel">
+        <swiper class="swiper" current="0" autoplay="false">
+          <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+            <image class="sk-image"></image>
+          </swiper-item>
+        </swiper>
+      </view>
+      <view class="cound-down">
+        <view class="title sk-transparent sk-text-14-2857-833 sk-text" style="background-position-x: 50%;">考研倒计时</view>
+        <view is="miniprogram_npm/@vant/weapp/count-down/index" class="cound-down-panel">
+          <view class="van-count-down index--van-count-down sk-transparent">
+            <text class="item sk-transparent sk-text-25-5102-355 sk-text" style="background-position-x: 50%;">1</text>天
+            <text class="item sk-transparent sk-text-25-5102-999 sk-text" style="background-position-x: 50%;">5</text>时
+            <text class="item sk-transparent sk-text-25-5102-23 sk-text" style="background-position-x: 50%;">59</text>分
+            <text class="item sk-transparent sk-text-25-5102-349 sk-text" style="background-position-x: 50%;">45</text>秒
+          </view>
+        </view>
+      </view>
+      <view class="nine-channel">
+        <view class="channel-item sk-transparent">
+          <view class="icon">
+            <image class="sk-image"></image>
+          </view>
+          今日打卡
+        </view>
+      </view>
+    </view>
+    <view is="components/tabBar/index">
+      <view class="tabBar-index--tabBar" style="border: none;">
+        <view class="tabBar-index--tab" data-path="/pages/index/index">
+          <view class="tabBar-index--icon">
+            <image class="sk-image"></image>
+          </view>
+          <view class="tabBar-index--name tabBar-index--activeName sk-transparent sk-text-14-2857-632 sk-text" style="color:#54AFFE">首页</view>
+        </view>
+        <view class="tabBar-index--tab" data-path="/pages/my/index">
+          <view class="tabBar-index--icon">
+            <image class="sk-image"></image>
+          </view>
+          <view class="tabBar-index--name sk-transparent sk-text-14-2857-120 sk-text" style="color:#333">我的</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

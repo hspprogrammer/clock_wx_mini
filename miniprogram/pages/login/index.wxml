@@ -1,0 +1,9 @@
+<view class="tip">登陆即可享受平台的服务内容，祝您成功考研上岸</view>
+<view class="inputPanel">
+  <view class="label">群内昵称：</view>
+  <view class="input">
+    <input value="{{value}}" placeholder="选填"/>
+  </view>
+</view>
+<view class="loginBtn" bindtap="login">登陆</view>
+<view class="loginBtn cancelBtn">取消</view>

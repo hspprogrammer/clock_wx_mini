@@ -1,15 +1,18 @@
-<NavBar title="首页" isShowLeftBtn="{{false}}"/>
-<view class="container">
+<import src="index.skeleton.wxml" />
+<template is="skeleton" wx-if="{{loading}}" />
+<view wx:else="">
+  <NavBar title="首页" isShowLeftBtn="{{false}}" />
+  <view class="container">
     <view class="swiper-panel">
-      <swiper class="swiper">
-        <swiper-item>
-          <image class="" src="https://img0.baidu.com/it/u=1084076284,4117249384&fm=253&fmt=auto&app=138&f=JPEG?w=970&h=485"/>
+      <swiper class="swiper" autoplay="{{true}}" circular="{{true}}">
+        <swiper-item wx:for="{{swiperList}}" wx:key="_id">
+          <image class="" src="{{item.url}}" />
         </swiper-item>
       </swiper>
     </view>
     <!-- 倒计时 -->
     <view class="cound-down">
-      <view class="title">考研倒计时</view>
+      <view class="title">{{testName}}考研倒计时</view>
       <van-count-down class="cound-down-panel" use-slot time="{{ time }}" bind:change="onChange" format="HH:mm:ss">
         <text class="item">{{ timeData.days }}</text>天
         <text class="item">{{ timeData.hours }}</text>时
@@ -26,5 +29,6 @@
         今日打卡
       </view>
     </view>
+  </view>
 </view>
-<tabBar/>
+<tabBar />

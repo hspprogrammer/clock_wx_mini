@@ -3,9 +3,9 @@
   <view class="nick-info">
     <view class="left">
       <view class="nickImg">
-        <image src="https://6b79-kydk-9gefpree1ca906af-1305408647.tcb.qcloud.la/icon/%E5%A4%B4%E5%83%8F.png?sign=de1d6003c0099c1efdaa4666924d2d06&t=1648706562"></image>
+        <image src="{{userInfo.nickImage}}"></image>
       </view>
-      <view class="nickName">blueshuangyue</view>
+      <view class="nickName">{{userInfo.nickName}}</view>
     </view>
     <view class="edif" bindtap="goEditUserInfo">编辑</view>
   </view>

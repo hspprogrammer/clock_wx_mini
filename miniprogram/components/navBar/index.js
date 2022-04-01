@@ -33,7 +33,6 @@ Component({
     isHome:true,//显示返回还是首页按钮
   },
   attached(){
-    console.log(getCurrentPages())
     const {width} = wx.getMenuButtonBoundingClientRect();
     this.setData({
       statuBarHeight:wx.getSystemInfoSync().statusBarHeight,

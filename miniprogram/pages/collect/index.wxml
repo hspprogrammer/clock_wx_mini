@@ -1,10 +1,24 @@
+<wxs module="util" src="./index.wxs"/>
 <NavBar title="编辑资料" type="fixed" />
 <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-  <image class="avatar" src="{{avatarUrl}}"></image>
+  <image class="avatar" src="{{userInfo.nickImage}}"></image>
 </button> 
 <view class="cell-panel">
-  <view class="cell-title">昵称</view>
-  <input type="nickname" class="weui-input" placeholder="请输入昵称"/>
+  <view class="cell-title">昵称：</view>
+  <input type="nickname" value="{{userInfo.nickName}}" class="weui-input" placeholder="请输入昵称"/>
+</view>
+<view class="cell-panel">
+  <view class="cell-title">群内昵称：</view>
+  <input value="{{userInfo.groupName}}" class="weui-input" placeholder="请输入所在群内昵称"/>
+</view>
+<view class="cell-panel">
+  <view class="cell-title">手机号：</view>
+  <input value="{{userInfo.tel}}" class="weui-input" placeholder="请输入手机号"/>
+</view>
+<view class="cell-panel">
+  <view class="cell-title">考研日期：</view>
+  <picker bindchange="bindPickerChange"  range-key="dateName" range="{{testTypes}}">{{util.testHandler(userInfo.testType,testTypes)}}
+  </picker>
 </view>
 <view class="save-btn">
     保    存

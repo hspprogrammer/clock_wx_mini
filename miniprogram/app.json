@@ -4,7 +4,8 @@
     "pages/my/index",
     "pages/dkLog/index",
     "pages/publicDk/index",
-    "pages/collect/index"
+    "pages/collect/index",
+    "pages/login/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

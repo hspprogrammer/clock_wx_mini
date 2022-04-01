@@ -1,10 +1,12 @@
 // pages/my/index.js
 Page({
   data: {
-
+    userInfo:{}
   },
   onLoad: function (options) {
-
+    this.setData({
+      userInfo:this.$storage('userInfo')
+    })
   },
   //跳转打卡记录
   goDkRank(){

@@ -1,0 +1,11 @@
+function testHandler(id='',testList=[]){
+  if(!id || testList.length == 0) return '';
+  var testInfo = testList.filter(function(item){
+    return item._id == id;
+  });
+  return testInfo[0]['dateName'];
+}
+
+module.exports = {
+  testHandler:testHandler
+}

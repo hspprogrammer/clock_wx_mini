@@ -21,7 +21,7 @@
         },
         {
           "name": "",
-          "pathName": "pages/publicDk/index",
+          "pathName": "pages/login/index",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -29,6 +29,13 @@
         {
           "name": "",
           "pathName": "pages/dkLog/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/collect/index",
           "query": "",
           "scene": null,
           "launchMode": "default"

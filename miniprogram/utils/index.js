@@ -1,7 +1,19 @@
 import "./rewrite";
+import {setStorage} from "./storage"
 
 function appInit(option){
-    
+  wx.cloud.init({
+    traceUser: true,
+  })
+  wx.cloud.callFunction({
+    name: 'login',
+    data: {},
+  }).then(({result})=>{
+    this.globalData.userId = result._id;
+    setStorage('userInfo',result)
+    if (this.checkLoginByLoad) this.checkLoginByLoad();
+    if (this.checkLoginByShow) this.checkLoginByShow();
+  })
 }
 
 /**
