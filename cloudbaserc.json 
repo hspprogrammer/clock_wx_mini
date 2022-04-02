@@ -1,6 +1,7 @@
 {
   "envId": "{{env.ENV_ID}}",
   "version": "2.0",
+  "functionRoot": "./cloudfunctions",
   "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
   "framework": {
     "name": "clock_mini",
@@ -32,7 +33,24 @@
       "db":{
         "use": "@cloudbase/framework-plugin-database",
         "inputs": {
-          "collections": []
+          "collections": [
+              {
+                "collectionName": "clockList",
+                "aclTag": "READONLY"
+              },
+              {
+                "collectionName": "swiperList",
+                "aclTag": "READONLY"
+              },
+              {
+                "collectionName": "testTypes",
+                "aclTag": "READONLY"
+              },
+              {
+                "collectionName": "userList",
+                "aclTag": "READONLY"
+              }
+            ]
         }
       },
       "mp":{
