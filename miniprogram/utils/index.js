@@ -1,6 +1,20 @@
 import "./rewrite";
 import {setStorage} from "./storage"
 
+
+/**
+ * 更新小程序
+ */
+function checkUpdate () {
+  if (wx.getUpdateManager && wx.getUpdateManager()) {
+      const updateManager = wx.getUpdateManager();
+      updateManager.onCheckForUpdate(function () { });
+      updateManager.onUpdateReady(function () {
+          updateManager.applyUpdate();
+      });
+      updateManager.onUpdateFailed(function () { });
+  }
+}
 function appInit(option){
   wx.cloud.init({
     env:"kydk-9gefpree1ca906af",
@@ -32,6 +46,7 @@ function px2rpx (px) {
 }
 
 module.exports = {
+  checkUpdate:checkUpdate,
   appInit:appInit,
   rpx2px:rpx2px,
   px2rpx:px2rpx
