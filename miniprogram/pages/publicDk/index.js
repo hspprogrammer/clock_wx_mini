@@ -39,6 +39,7 @@ Page({
       cloudPath: "images/"+getFileName(url), // 上传至云端的路径
       filePath: url, // 小程序临时文件路径
       success: res => {
+        console.log({url,path:"images/"+getFileName(url)})
         // 返回文件 ID
         this.setData({
           image:res.fileID,
