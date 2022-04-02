@@ -1,5 +1,5 @@
 function testHandler(id='',testList=[]){
-  if(!id || testList.length == 0) return '';
+  if(!id || testList.length == 0) return '未选择';
   var testInfo = testList.filter(function(item){
     return item._id == id;
   });

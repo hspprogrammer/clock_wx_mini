@@ -37,6 +37,13 @@
           "name": "",
           "pathName": "pages/collect/index",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/publicDk/index",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }

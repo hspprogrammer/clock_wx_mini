@@ -1,0 +1,78 @@
+{
+  "envId": "{{env.ENV_ID}}",
+  "version": "2.0",
+  "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+  "framework": {
+    "name": "clock_mini",
+    "plugins": {
+      "fn": {
+        "use": "@cloudbase/framework-plugin-function",
+        "inputs": {
+          "functionRootPath": "./cloudfunctions",
+          "functions": [
+            {
+              "name": "collect",
+              "installDependency": true
+            },
+            {
+              "name": "dk",
+              "installDependency": true
+            },
+            {
+              "name": "home",
+              "installDependency": true
+            },
+            {
+              "name": "login",
+              "installDependency": true
+            }
+          ]
+        }
+      },
+      "db":{
+        "use": "@cloudbase/framework-plugin-database",
+        "inputs": {
+          "collections": []
+        }
+      },
+      "mp":{
+          "use": "@cloudbase/framework-plugin-mp",
+          "inputs": {
+            "appid": "{{env.WX_APPID}}",
+            "privateKey": "{{env.WX_CI_KEY}}",
+            "localPath": "./",
+            "ignores": ["node_modules/**/*"],
+            "deployMode": "preview",
+            "previewOptions": {
+              "desc": "一键预览",
+              "setting": {
+                "es6": false
+              },
+              "qrcodeOutputPath": "./qrcode.jpg",
+              "pagePath": "pages/index/index",
+              "searchQuery": "",
+              "scene": 1011
+            }
+          }
+        }
+      }
+    },
+    "requirement":{
+      "environment": {
+        "WX_APPID": {
+          "description": "请填写微信小程序APPID",
+          "required": true,
+          "default": "",
+          "validation": {
+            "rule": {
+              "type": "RegExp",
+              "pattern": "^wx.*",
+              "flag": "g"
+            },
+            "errorMessage": "必须是小程序的APPID"
+          }
+        }
+      }
+    }
+  }
+}

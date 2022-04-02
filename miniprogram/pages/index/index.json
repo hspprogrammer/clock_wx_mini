@@ -3,5 +3,6 @@
     "tabBar": "../../components/tabBar/index",
     "van-count-down": "@vant/weapp/count-down/index"
   },
-  "navigationBarTitleText":"首页"
+  "navigationBarTitleText":"首页",
+  "enablePullDownRefresh":true
 }

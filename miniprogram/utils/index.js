@@ -3,6 +3,7 @@ import {setStorage} from "./storage"
 
 function appInit(option){
   wx.cloud.init({
+    env:"kydk-9gefpree1ca906af",
     traceUser: true,
   })
   wx.cloud.callFunction({

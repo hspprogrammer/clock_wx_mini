@@ -16,16 +16,16 @@ async function getSwiper(){
 // 获取九宫格
 
 //获取考研时间
-async function getTestDate(userId){
-  if(!userId){
-    return db.collection('testTypes').orderBy('date', 'asc').limit(1).get()
+async function getTestDate(){
+  let { OPENID} = cloud.getWXContext() 
+  const {data} = await db.collection('userList').doc(OPENID).get();
+  if(!data.testType){
+     const res = await db.collection('testTypes').orderBy('date', 'asc').limit(1).get();
+     return res['data'][0]
+  }else{
+    const res = await db.collection('testTypes').doc(data.testType).get();
+    return res['data']
   }
-  return db.collection('userList').doc(userId).aggregate().lookup({
-    from: 'testTypes',
-    localField: 'testType',
-    foreignField: '_id',
-    as: 'testInfo',
-  }).end()
 }
 
 module.exports={

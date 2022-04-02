@@ -8,6 +8,11 @@ Page({
       userInfo:this.$storage('userInfo')
     })
   },
+  onShow: function () {
+    this.setData({
+      userInfo:this.$storage('userInfo')
+    })
+  },
   //跳转打卡记录
   goDkRank(){
     wx.navigateTo({

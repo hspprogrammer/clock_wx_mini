@@ -5,6 +5,7 @@ App({
     userId:''
   },
   onLaunch(option) {
+    this.globalData.userId = '';
     appInit.call(this,option);
   },
 })

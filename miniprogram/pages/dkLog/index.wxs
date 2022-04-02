@@ -1,0 +1,19 @@
+function formatNumber (n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+function formateDate(stamp){
+  var date = getDate(stamp);
+  var YYYY = date.getFullYear();
+  var MM = date.getMonth()+1;
+  var DD = date.getDate();
+  var hh = date.getHours();
+  var mm = date.getMinutes();
+  var ss = date.getSeconds();
+  return  YYYY+'-'+formatNumber(MM)+'-'+formatNumber(DD)+' '+formatNumber(hh)+':'+formatNumber(mm)+':'+formatNumber(ss);
+}
+
+module.exports = {
+  formateDate:formateDate
+}

@@ -1,0 +1,94 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/4/2 下午12:03:55
+使用方法：
+在 /Users/hanshanpeng/myproject/myCode/my_project/wx/dk-wx/miniprogram/pages/dkLog/index.wxml 引入模板
+
+```
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/hanshanpeng/myproject/myCode/my_project/wx/dk-wx/miniprogram/pages/dkLog/index.wxss 中引入样式
+```
+@import "./index.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view is="components/navBar/index">
+      <view class="index--narBar_panel index--fixed" style="padding-top: 20px;">
+        <view class="index--left_arrow" style="width: 87px;">
+          <view>
+            <view is="miniprogram_npm/@vant/weapp/icon/index">
+              <view class="van-icon icon-index--van-icon van-icon-arrow-left icon-index--van-icon-arrow-left sk-pseudo sk-pseudo-circle" style="font-size:19px"></view>
+            </view>
+          </view>
+        </view>
+        <view class="sk-transparent sk-text-14-2857-774 sk-text">打卡记录</view>
+        <view class="index--right" style="width: 87px;"></view>
+      </view>
+      <view class="index--narBar_panel" style="padding-top: 20px;"></view>
+    </view>
+    <view class="log-item">
+      <view class="image">
+        <view is="components/lazyImage/index" class="vanimage">
+          <view class="lazyImage-index--lazy-image-comp image-container-class">
+            <image class="lazyImage-index--final-image sk-image" mode="scaleToFill" style="true"></image>
+          </view>
+        </view>
+      </view>
+      <view class="text-panel">
+        <view class="text sk-transparent sk-text-14-2857-375 sk-text">
+          当用户在浏览器上点击一个链接时，会产生一个 HTTP 请求，用于获取新的页面内容，而在该请求的报头中，会包含一个 Referrer，用以指定该请求是从哪个页面跳转页来的，常被用于分析用户来源等信息。但是也对用户产生了一个不安全因素，比如有些网站直接将 sessionid 或是 token 放在地址栏里传递的(比如get请求中的参数)，会原样不动地当作 Referrer 报头的内容传递给第三方网站。
+        </view>
+        <view class="date sk-transparent sk-text-14-2857-123 sk-text" style="background-position-x: 100%;">2022-03-23</view>
+      </view>
+    </view>
+    <view class="log-item">
+      <view class="image">
+        <view is="components/lazyImage/index" class="vanimage">
+          <view class="lazyImage-index--lazy-image-comp image-container-class">
+            <image class="lazyImage-index--final-image sk-image" mode="scaleToFill" style="true"></image>
+          </view>
+        </view>
+      </view>
+      <view class="text-panel">
+        <view class="text sk-transparent sk-text-14-2857-348 sk-text">
+          当用户在浏览器上点击一个链接时，会产生一个 HTTP 请求，用于获取新的页面内容，而在该请求的报头中，会包含一个 Referrer，用以指定该请求是从哪个页面跳转页来的，常被用于分析用户来源等信息。但是也对用户产生了一个不安全因素，比如有些网站直接将 sessionid 或是 token 放在地址栏里传递的(比如get请求中的参数)，会原样不动地当作 Referrer 报头的内容传递给第三方网站。
+        </view>
+        <view class="date sk-transparent sk-text-14-2857-575 sk-text" style="background-position-x: 100%;">2022-03-23</view>
+      </view>
+    </view>
+    <view class="log-item">
+      <view class="image">
+        <view is="components/lazyImage/index" class="vanimage">
+          <view class="lazyImage-index--lazy-image-comp image-container-class">
+            <image class="lazyImage-index--final-image sk-image" mode="scaleToFill" style="true"></image>
+          </view>
+        </view>
+      </view>
+      <view class="text-panel">
+        <view class="text sk-transparent sk-text-14-2857-642 sk-text">
+          当用户在浏览器上点击一个链接时，会产生一个 HTTP 请求，用于获取新的页面内容，而在该请求的报头中，会包含一个 Referrer，用以指定该请求是从哪个页面跳转页来的，常被用于分析用户来源等信息。但是也对用户产生了一个不安全因素，比如有些网站直接将 sessionid 或是 token 放在地址栏里传递的(比如get请求中的参数)，会原样不动地当作 Referrer 报头的内容传递给第三方网站。
+        </view>
+        <view class="date sk-transparent sk-text-14-2857-47 sk-text" style="background-position-x: 100%;">2022-03-23</view>
+      </view>
+    </view>
+    <view class="log-item">
+      <view class="image">
+        <view is="components/lazyImage/index" class="vanimage">
+          <view class="lazyImage-index--lazy-image-comp image-container-class">
+            <image class="lazyImage-index--final-image sk-image" mode="scaleToFill" style="true"></image>
+          </view>
+        </view>
+      </view>
+      <view class="text-panel">
+        <view class="text sk-transparent sk-text-14-2857-259 sk-text">
+          当用户在浏览器上点击一个链接时，会产生一个 HTTP 请求，用于获取新的页面内容，而在该请求的报头中，会包含一个 Referrer，用以指定该请求是从哪个页面跳转页来的，常被用于分析用户来源等信息。但是也对用户产生了一个不安全因素，比如有些网站直接将 sessionid 或是 token 放在地址栏里传递的(比如get请求中的参数)，会原样不动地当作 Referrer 报头的内容传递给第三方网站。
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

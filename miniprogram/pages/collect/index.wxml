@@ -5,21 +5,21 @@
 </button> 
 <view class="cell-panel">
   <view class="cell-title">昵称：</view>
-  <input type="nickname" value="{{userInfo.nickName}}" class="weui-input" placeholder="请输入昵称"/>
+  <input type="nickname" value="{{userInfo.nickName}}" bindinput="nickNameInput" class="weui-input" placeholder="请输入昵称"/>
 </view>
 <view class="cell-panel">
   <view class="cell-title">群内昵称：</view>
-  <input value="{{userInfo.groupName}}" class="weui-input" placeholder="请输入所在群内昵称"/>
+  <input value="{{userInfo.groupName}}" bindinput="groupNameInput" class="weui-input" placeholder="请输入所在群内昵称"/>
 </view>
 <view class="cell-panel">
   <view class="cell-title">手机号：</view>
-  <input value="{{userInfo.tel}}" class="weui-input" placeholder="请输入手机号"/>
+  <input value="{{userInfo.tel}}" bindinput="telInput" class="weui-input" placeholder="请输入手机号"/>
 </view>
 <view class="cell-panel">
   <view class="cell-title">考研日期：</view>
   <picker bindchange="bindPickerChange"  range-key="dateName" range="{{testTypes}}">{{util.testHandler(userInfo.testType,testTypes)}}
   </picker>
 </view>
-<view class="save-btn">
+<view class="save-btn" bindtap="saveBtn">
     保    存
   </view>

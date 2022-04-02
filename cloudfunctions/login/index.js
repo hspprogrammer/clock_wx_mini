@@ -25,6 +25,7 @@ exports.main = async (event, context) => {
         nickImage:'cloud://kydk-9gefpree1ca906af.6b79-kydk-9gefpree1ca906af-1305408647/icon/头像.png',
         nickName:'微信用户',
         tel:'',
+        nearClockDate:0,
         testType:testInfo.data[0]['_id'],
         created: new Date().getTime()
       };

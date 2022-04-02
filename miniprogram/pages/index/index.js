@@ -8,10 +8,11 @@ Page({
     timeData: {},
     swiperList:[],
     testName:'',
-    loading:true
+    loading:true,
   },
   onLoad() {
     this.getHomeData()
+    this.nearClockDate = this.$storage('userInfo')['nearClockDate'] || 0;
   },
   // 倒计时
   onChange(e) {
@@ -21,9 +22,16 @@ Page({
   },
   //去打卡
   goPublicDk(){
-    wx.navigateTo({
-      url: '/pages/publicDk/index',
-    })
+    if(this.nearClockDate > new Date(new Date().toLocaleDateString()).getTime() ){
+      wx.showToast({
+        title: '今天已经打过卡了',
+        icon: 'none'
+      })
+    }else{
+      wx.navigateTo({
+        url: '/pages/publicDk/index',
+      })
+    }
   },
   //获取数据
   getHomeData(){
@@ -37,13 +45,18 @@ Page({
       },
     }).then(({result})=>{
       wx.hideLoading()
+      wx.stopPullDownRefresh()
       this.setData({
         swiperList:result.swiper,
         loading:false,
-        time:result.testInfo[0].date -new Date().getTime(),
-        testName:result.testInfo[0].dateName
+        time:result.testInfo.date -new Date().getTime(),
+        testName:result.testInfo.dateName
       })
     })
     
+  },
+  //下拉刷新
+  onPullDownRefresh(){
+    this.getHomeData()
   }
 })

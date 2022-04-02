@@ -45,6 +45,8 @@
                      return cusFunc && cusFunc.apply(this, [...arguments]);
                    }
                  }
+               }else{
+                return cusFunc && cusFunc.apply(this, [...arguments]);
                }
              }
            })

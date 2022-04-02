@@ -1,66 +1,49 @@
-// pages/dkRank/index.js
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    logList:[],
+    loading:true,
+    isHasMore:true
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    this.page = 1;
+    this.size = 10;
+    this.getDkLog()
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function () {
-
+    if(!this.data.isHasMore) return null;
+    this.page ++;
+    this.getDkLog()
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //获取打卡记录
+  getDkLog(){
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.cloud.callFunction({
+      name: 'dk',
+      data: {
+        type:'get',
+        page:this.page,
+        size:this.size
+      },
+    }).then(({result})=>{
+      wx.hideLoading()
+      this.setData({
+        logList:[...this.data.logList,...result.data],
+        loading:false,
+        isHasMore:!(result.data.length < this.size)
+      })
+    })
+  },
+  //预览图片
+  previewImg(e){
+    const {url} = e.currentTarget.dataset
+    wx.previewMedia({
+      sources:[{
+        url:url,
+        type:'image',
+      }]
+    })
   }
 })

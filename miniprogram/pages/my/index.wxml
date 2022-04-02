@@ -19,5 +19,13 @@
     </view>
     <van-icon name="arrow" />
   </view>
+  <button open-type="contact" class="dkList" >
+    <view class="right">
+      <view class="icon">
+        <image src="cloud://kydk-9gefpree1ca906af.6b79-kydk-9gefpree1ca906af-1305408647/icon/客服.png" />
+      </view>
+      联系客服
+    </view>
+  </button>
 </view>
 <tabBar nowIndex="1" />

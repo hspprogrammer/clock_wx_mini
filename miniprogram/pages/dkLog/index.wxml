@@ -1,13 +1,22 @@
+<wxs module="util" src="./index.wxs"/>
 <NavBar title="打卡记录" type="fixed" />
-<view class="title">已打卡20天/应打卡350天</view>
-<view class="log-item" wx:for="{{20}}">
-  <view class="image">
-    <LazyImage class="vanimage" image-container-class="image-container-class"  src="https://img.yzcdn.cn/vant/cat.jpeg" />
-  </view>
-  <view class="text-panel">
-    <view class="text">
-      当用户在浏览器上点击一个链接时，会产生一个 HTTP 请求，用于获取新的页面内容，而在该请求的报头中，会包含一个 Referrer，用以指定该请求是从哪个页面跳转页来的，常被用于分析用户来源等信息。但是也对用户产生了一个不安全因素，比如有些网站直接将 sessionid 或是 token 放在地址栏里传递的(比如get请求中的参数)，会原样不动地当作 Referrer 报头的内容传递给第三方网站。
+<!-- <view class="title">已打卡20天/应打卡350天</view> -->
+<import src="index.skeleton.wxml" />
+<template is="skeleton" wx-if="{{loading}}" />
+<block wx:else>
+  <block wx:if="{{logList.length}}">
+    <view class="log-item" wx:for="{{logList}}" wx:key="_id">
+      <view class="image" bindtap="previewImg" data-url="{{item.image}}">
+        <LazyImage class="vanimage" image-container-class="image-container-class" src="{{item.image}}" />
+      </view>
+      <view class="text-panel">
+        <view class="text">
+          {{item.content}}
+        </view>
+        <view class="date">{{util.formateDate(item.created)}}</view>
+      </view>
     </view>
-    <view class="date">2022-03-23</view>
-  </view>
-</view>
+    <van-divider wx:if="{{!isHasMore}}" contentPosition="center">暂无更多记录</van-divider>
+  </block>
+  <van-empty wx:else description="暂无打卡记录" />
+</block>
