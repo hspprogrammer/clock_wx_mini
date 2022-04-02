@@ -5,7 +5,7 @@
     <textarea placeholder="今天完成了啥呢。。。" value="{{content}}" placeholder-class="input-text" bindinput="contentInput"	maxlength="500"></textarea>
   </view>
   <view class="title">图片为证：</view>
-  <van-uploader  file-list="{{ fileList }}" bind:after-read="afterRead" max-count="1" bind:delete="delImg" bind:after-read="chooseImg"/>
+  <van-uploader  file-list="{{ fileList }}"  max-count="1" bind:delete="delImg" bind:after-read="chooseImg"/>
   <view class="public-btn" bindtap="publicClock">
     打卡上传
   </view>

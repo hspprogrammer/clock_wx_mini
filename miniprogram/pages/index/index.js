@@ -12,6 +12,8 @@ Page({
   },
   onLoad() {
     this.getHomeData()
+  },
+  onShow(){
     this.nearClockDate = this.$storage('userInfo')['nearClockDate'] || 0;
   },
   // 倒计时
@@ -58,5 +60,8 @@ Page({
   //下拉刷新
   onPullDownRefresh(){
     this.getHomeData()
+  },
+  onShareAppMessage(){
+
   }
 })

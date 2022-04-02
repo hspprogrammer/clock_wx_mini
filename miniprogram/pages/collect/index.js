@@ -1,4 +1,4 @@
-
+const {getFileName } = require("../../utils/util")
 Page({
   data: {
     testTypes:[],//考研日期
@@ -22,11 +22,10 @@ Page({
   onChooseAvatar(e) {
     const { avatarUrl } = e.detail 
     wx.cloud.uploadFile({
-      cloudPath: avatarUrl.replace('http://tmp/',''), // 上传至云端的路径
+      cloudPath: "images/"+getFileName(avatarUrl), // 上传至云端的路径
       filePath: avatarUrl, // 小程序临时文件路径
       success: res => {
         // 返回文件 ID
-        console.log(res.fileID)
         this.setData({
           ['userInfo.nickImage']:res.fileID
         })

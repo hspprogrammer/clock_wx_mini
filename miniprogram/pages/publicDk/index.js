@@ -1,4 +1,4 @@
-// pages/publicDk/index.js
+const {getFileName } = require("../../utils/util")
 Page({
 
   /**
@@ -15,23 +15,6 @@ Page({
    */
   onLoad: function (options) {
 
-  },
-  //设置打卡照片
-  afterRead(event) {
-    const { file } = event.detail;
-    // 当设置 mutiple 为 true 时, file 为数组格式，否则为对象格式
-    wx.uploadFile({
-      url: 'https://example.weixin.qq.com/upload', // 仅为示例，非真实的接口地址
-      filePath: file.url,
-      name: 'file',
-      formData: { user: 'test' },
-      success(res) {
-        // 上传完成需要更新 fileList
-        const { fileList = [] } = this.data;
-        fileList.push({ ...file, url: res.data });
-        this.setData({ fileList });
-      },
-    });
   },
   //学习内容
   contentInput(e){
@@ -53,7 +36,7 @@ Page({
       title: '上传中',
     })
     wx.cloud.uploadFile({
-      cloudPath: url.replace('http://tmp/',''), // 上传至云端的路径
+      cloudPath: "images/"+getFileName(url), // 上传至云端的路径
       filePath: url, // 小程序临时文件路径
       success: res => {
         // 返回文件 ID
@@ -85,8 +68,9 @@ Page({
   //打卡
   publicClock(){
     const {content,image} = this.data;
-    if(!content) wx.showToast({ title: '请填写学习内容', icon: 'none' });
-    if(!image) wx.showToast({ title: '请选择图片', icon: 'none' });
+    console.log({content,image})
+    if(!content) return wx.showToast({ title: '请填写学习内容', icon: 'none' });
+    if(!image) return wx.showToast({ title: '请选择图片', icon: 'none' });
     wx.showLoading({
       title: '打卡中',
     })
@@ -105,6 +89,7 @@ Page({
           icon: 'success',
           duration: 1500
         })
+        this.$storage('userInfo',{...this.$storage('userInfo'),nearClockDate:new Date().getTime()})
         wx.redirectTo({
           url: '/pages/dkLog/index'
         })
